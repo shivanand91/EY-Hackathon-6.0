@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://ey-hackathon-backend.vercel.app/api/v1",
+  baseURL: "https://ey-hackathon-6-0.vercel.app/api/v1",
   headers: {
     "Content-Type": "application/json",
   },

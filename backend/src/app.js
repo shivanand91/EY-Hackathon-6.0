@@ -3,9 +3,6 @@ import cors from "cors";
 
 const app = express();
 
-/**
- * 🔥 CORS FIX — VERY IMPORTANT
- */
 app.use(
   cors({
     origin: "*",            // allow all origins (hackathon safe)
