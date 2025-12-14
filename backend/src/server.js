@@ -3,23 +3,20 @@ import { ENV } from "./config/env.js";
 import { connectDB } from "./config/db.js";
 
 /**
- * -------------------------
- * Start Server
- * -------------------------
+ * Local development server ONLY
+ * ❌ Not used by Vercel
  */
 const startServer = async () => {
   try {
-    // Connect to MongoDB
     await connectDB();
 
-    // Start Express server
     app.listen(ENV.PORT, () => {
       console.log(
-        `🚀 Server running in ${ENV.NODE_ENV} mode on http://localhost:${ENV.PORT}`
+        `🚀 Local server running on http://localhost:${ENV.PORT} (${ENV.NODE_ENV})`
       );
     });
   } catch (error) {
-    console.error("❌ Failed to start server");
+    console.error("❌ Failed to start local server");
     console.error(error);
     process.exit(1);
   }
