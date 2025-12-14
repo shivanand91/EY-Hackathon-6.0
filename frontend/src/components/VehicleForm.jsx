@@ -12,20 +12,17 @@ const VehicleForm = ({ form, onChange, onSubmit, loading }) => {
 
   return (
     <div className="bg-slate-900/80 rounded-2xl p-6 shadow-lg border border-slate-800">
-      <h1 className="text-2xl font-semibold mb-2 text-yellow-300">
-        Agentic AI – Vehicle Health Check
-      </h1>
+      <h2 className="text-2xl font-semibold mb-2 text-yellow-300">
+        Vehicle Health Input
+      </h2>
       <p className="text-xs text-slate-300 mb-4">
-        Enter sensor readings (simulated or real) and run the autonomous
-        multi-agent diagnosis.
+        Enter live or simulated sensor readings to run the agentic diagnosis.
       </p>
 
       <div className="space-y-3">
         {fields.map(([name, label, type]) => (
           <div key={name} className="flex flex-col gap-1">
-            <label className="text-xs font-medium text-slate-300">
-              {label}
-            </label>
+            <label className="text-xs text-slate-300">{label}</label>
             <input
               type={type}
               name={name}
@@ -40,7 +37,7 @@ const VehicleForm = ({ form, onChange, onSubmit, loading }) => {
       <button
         onClick={onSubmit}
         disabled={loading}
-        className="mt-5 w-full py-2.5 rounded-lg bg-yellow-400 text-slate-900 font-semibold text-sm hover:bg-yellow-300 disabled:opacity-60 disabled:cursor-not-allowed transition"
+        className="mt-5 w-full py-2.5 rounded-lg bg-yellow-400 text-slate-900 font-semibold text-sm hover:bg-yellow-300 disabled:opacity-60 transition"
       >
         {loading ? "Running agents..." : "Run Diagnosis"}
       </button>
