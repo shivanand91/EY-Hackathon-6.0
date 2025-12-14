@@ -7,13 +7,12 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    // app.listen(ENV.PORT, () => {
-    //   console.log(
-    //     `🚀 Local server running on http://localhost:${ENV.PORT} (${ENV.NODE_ENV})`
-    //   );
-    // });
-    console.log("server on");
-    
+    app.listen(ENV.PORT, () => {
+      console.log(
+        `🚀 Local server running on http://localhost:${ENV.PORT} (${ENV.NODE_ENV})`
+      );
+    });
+  
   } catch (error) {
     console.error("❌ Failed to start local server");
     console.error(error);
