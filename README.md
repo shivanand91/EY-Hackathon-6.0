@@ -1,260 +1,164 @@
 # 🚗 Agentic AI for Autonomous Predictive Maintenance  
 ### EY Techathon 6.0 — Round 2 Submission  
-👨‍💻 Team: **XLCODER**  
-
----
+**Team: XLCODER**
 
 <p align="center">
-  <img src="https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/React-Frontend-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/TailwindCSS-UI-06B6D4?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/AI-Agentic_System-purple?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Styling-TailwindCSS-06B6D4?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Database-MongoDB-darkgreen?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AI-Agentic%20System-purple?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/LLM-Integrated-orange?style=for-the-badge"/>
 </p>
 
 ---
 
+## 🔗 Live Demo & Source Code
+
+- 🌐 **Live Demo:**  
+  👉 https://ey-hackathon-6-0-6xfa.vercel.app/
+
+- 💻 **Source Code (GitHub):**  
+  👉 https://github.com/shivanand91/dola
+
+---
+
 ## 🧠 Executive Summary
 
-Modern vehicle maintenance is reactive — problems are discovered only after breakdowns occur.  
-This causes:
+The current vehicle maintenance ecosystem is largely **reactive**, where faults are identified only after a breakdown occurs. This results in unexpected failures, increased repair costs, operational downtime, and poor customer experience.
 
-- Unexpected failures  
-- High repair expenses  
-- Poor customer experience  
-- Lack of real-time feedback for OEMs  
+Our project introduces an **Agentic AI-powered Autonomous Predictive Maintenance System** that proactively analyzes vehicle sensor data, predicts failures, explains them in simple language, and automatically recommends service actions.
 
-### 🚀 Our Solution  
-We built an **Agentic AI system** that performs *autonomous predictive maintenance* using:
-
-- Real-time vehicle telemetry  
-- Multi-Agent Architecture  
-- LLM-powered Explanation Engine  
-- Automated Service Slot Scheduling  
-- OEM Insights Dashboard  
-
-This full-stack prototype demonstrates a future-ready automotive maintenance ecosystem.
+The system is designed as a **multi-agent architecture**, enabling autonomous decision-making, explainability, and scalability for real-world deployment.
 
 ---
 
-# 🎯 Problem Statement
+## 🎯 Problem Statement
 
-Current vehicle service workflow faces these issues:
-
-- Faults are detected only after a breakdown  
-- Users cannot interpret technical data  
-- No automated end-to-end service flow  
-- OEMs lack real-time issue patterns  
-- Service centers cannot optimize workload  
-
-Our system transitions the ecosystem from  
-❌ *Reactive* → ✔ *Predictive* → ✔ *Autonomous*
+- Vehicle fault detection is delayed, leading to breakdowns  
+- Sensor data is technical and difficult for end users to understand  
+- Service booking is manual and inefficient  
+- OEMs lack real-time visibility into recurring defect patterns  
+- Existing systems do not support autonomous, end-to-end maintenance workflows  
 
 ---
 
-# 🌟 Solution Overview (High-Level Workflow)
+## 🌟 Solution Overview
 
-User → Enters Sensor Inputs → FastAPI Backend
-→ Multi-Agent Logic (Diagnosis + Explanation + Scheduling)
-→ Output Sent Back to React Frontend
-→ OEM Insights Aggregated
+We propose a **full-stack, AI-agent-based predictive maintenance platform** that:
 
-
-### 🧩 Multi-Agent Breakdown
-
-| Agent | Responsibility |
-|-------|----------------|
-| **DataAnalysisAgent** | Prepares and sanitizes sensor readings |
-| **DiagnosisAgent** | Detects anomalies & severity |
-| **ExplanationAgent (LLM)** | Converts findings into user-friendly natural language |
-| **ServiceSchedulingAgent** | Auto-schedules service slots |
-| **ManufacturingInsightsAgent** | Tracks recurring faults for OEM analytics |
+- Detects anomalies in real-time vehicle sensor readings  
+- Classifies fault severity using intelligent agents  
+- Explains issues using LLM-powered natural language reasoning  
+- Recommends optimal service slots and nearby workshops  
+- Aggregates insights at the OEM level for long-term improvements  
 
 ---
 
-# 🏗 System Architecture Diagram
+## 🤖 Multi-Agent Architecture
 
-Frontend (React + Tailwind)
-↓ REST API Calls (Axios)
-FastAPI Backend
-↓
-MasterAgent (Coordinator)
-├── DataAnalysisAgent
-├── DiagnosisAgent
-├── LLM ExplanationAgent
-├── ServiceSchedulingAgent
-└── ManufacturingInsightsAgent
+Each responsibility is handled by a dedicated AI agent, coordinated by a master agent.
 
-
----
-
-# 📁 Folder Structure (Professional)
-
-backend/
-│── .env
-│── requirements.txt
-│── app/
-│ ├── main.py
-│ ├── core/
-│ │ └── config.py
-│ ├── api/
-│ │ └── v1/
-│ │ ├── routes_diagnosis.py
-│ │ ├── routes_oem.py
-│ ├── models/
-│ │ ├── vehicle.py
-│ │ ├── diagnosis.py
-│ │ ├── service.py
-│ ├── agents/
-│ │ ├── data_agent.py
-│ │ ├── diagnosis_agent.py
-│ │ ├── explanation_agent.py
-│ │ ├── service_agent.py
-│ │ ├── manufacturing_agent.py
-│ │ └── master_agent.py
-│ ├── services/
-│ └── llm_service.py
-
-frontend/
-│── package.json
-│── tailwind.config.cjs
-│── src/
-│ ├── App.jsx
-│ ├── index.css
-│ ├── services/api.js
-│ ├── components/
-│ ├── VehicleForm.jsx
-│ ├── DiagnosisCard.jsx
-│ └── OEMInsightsCard.jsx
-
+| Agent Name | Responsibility |
+|----------|----------------|
+| **DataAgent** | Cleans and normalizes vehicle sensor data |
+| **DiagnosisAgent** | Detects faults and assigns severity levels |
+| **ExplanationAgent (LLM)** | Converts technical diagnosis into simple explanations |
+| **ServiceAgent** | Recommends service actions and booking slots |
+| **OEMAgent** | Aggregates issues across vehicles for OEM insights |
+| **MasterAgent** | Orchestrates agent workflow autonomously |
 
 ---
 
-# 🛠 Installation & Setup
+## 🔄 How the System Works
+
+1. Vehicle sensor data is submitted via the frontend UI  
+2. DataAgent preprocesses and validates the inputs  
+3. DiagnosisAgent detects anomalies and fault severity  
+4. ExplanationAgent generates a human-readable explanation  
+5. ServiceAgent recommends workshops and service slots  
+6. OEMAgent aggregates anonymized insights for manufacturers  
 
 ---
 
-## 1️⃣ Backend Setup (FastAPI)
+## 🧩 Key Features
 
-### Install dependencies
-```bash
-cd backend
-pip install -r requirements.txt
-Create .env
-OPENAI_API_KEY=your_openai_key_here
-BACKEND_CORS_ORIGINS=["http://localhost:5173"]
-Run Backend
-uvicorn app.main:app --reload
-Backend runs at:
-➡ http://127.0.0.1:8000
-Swagger UI:
-➡ http://127.0.0.1:8000/docs
-
-2️⃣ Frontend Setup (React + Tailwind)
-cd frontend
-npm install
-npm run dev
-Frontend runs at → http://localhost:5173
-
-🔌 API Endpoints
-✔ POST /api/v1/diagnose
-Runs the full multi-agent pipeline.
-
-Request Example
-{
-  "vehicle_id": "CAR-001",
-  "engine_temp": 120,
-  "battery_voltage": 11.2,
-  "tyre_pressure": 26,
-  "rpm": 3500,
-  "speed": 40
-}
-Response Example
-{
-  "vehicle_id": "CAR-001",
-  "issues": [
-    "Possible engine overheating",
-    "Low tyre pressure"
-  ],
-  "severity": "high",
-  "explanation": "Your engine temperature appears too high...",
-  "recommended_slot": "2025-01-02 15:30",
-  "workshop": "EY Partner Workshop - Lucknow"
-}
-✔ GET /api/v1/oem-insights
-Returns aggregated fault patterns from all diagnoses.
-
-Example Response
-{
-  "Possible engine overheating": 3,
-  "Low tyre pressure": 5
-}
-🧪 Demo Flow (Use in Presentation)
-1️⃣ User enters simulated real-time vehicle telemetry
-2️⃣ React frontend sends data → FastAPI
-3️⃣ MasterAgent triggers 5 internal agents
-4️⃣ LLM generates natural-language explanation
-5️⃣ Recommended service slot auto-selected
-6️⃣ OEM dashboard updates with aggregated faults
-
-🖼 UI Preview (Add Your Screenshots Here)
-✔ Vehicle Input Form
-✔ Diagnosis Card
-✔ LLM Explanation Output
-✔ OEM Insights Dashboard
-
-📈 Impact Summary
-Metric	Expected Improvement
-Breakdown Reduction	60–80%
-Service Turnaround	30–40% faster
-Customer Satisfaction	+20 NPS
-OEM Warranty Cost	Significant drop
-🚀 Future Enhancements
-ML-based anomaly detection
-
-EV battery health prediction
-
-CAN bus + real OBD-II integration
-
-Fleet-level analytics
-
-Intelligent workshop load balancing
-
-🏁 Conclusion
-This system demonstrates how Agentic AI + LLMs can transform automotive maintenance into an autonomous, predictive, customer-first ecosystem.
-
-👥 Team XLCODER
-Shivanand Kumar – ML/AI & Backend Architecture
-
-Anamika Pandey – UI/UX & Frontend Engineering
-
-💡 This README is optimized specifically for EY Techathon 6.0 Round 2 evaluation.
-
+- ✅ Autonomous fault detection (no manual intervention)  
+- ✅ Explainable AI using LLM integration  
+- ✅ One-click service booking recommendation  
+- ✅ OEM-level analytics and insights  
+- ✅ Modular, scalable agentic architecture  
+- ✅ Fully working end-to-end prototype  
 
 ---
 
-# ✅ README READY FOR GITHUB  
-यह पूरा README अब:
+## 🛠 Technology Stack
 
-✔ Professional  
-✔ Clean  
-✔ Perfect Markdown  
-✔ Zero formatting issues  
-✔ Judges के लिए बेहद impressive  
-✔ Industry-standard structure वाला है  
+### Frontend
+- **React.js (Vite)** – Fast and scalable SPA  
+- **Tailwind CSS** – Modern, responsive UI  
+- **Axios** – REST API communication  
 
-बस इसे अपने GitHub repo में `README.md` के रूप में paste कर दो।
+### Backend
+- **Node.js & Express.js** – RESTful API services  
+- **Agent-based architecture** – Modular intelligence layers  
+
+### AI & Intelligence
+- **LLM Integration** – Explainable diagnostics  
+- **Hybrid Rule + AI logic** – Reliable predictions  
+
+### Database
+- **MongoDB** – Vehicle data, diagnosis history, service logs  
+
+### Deployment
+- **Vercel** – Frontend & backend deployment  
+- **Environment-based configuration** – Secure and scalable  
 
 ---
 
-अगर तुम चाहो तो मैं:
+## 📊 OEM Insights (Enterprise Value)
 
-### 🔥 README में **badges, deployment guide, architecture images** भी add कर दूँ  
-या  
-### 🔥 **GitHub repository description + tags** ready कर दूँ  
+The platform provides OEMs with aggregated, anonymized insights such as:
 
-बस बोलो —  
-**“GitHub badges add कर दो”**  
-या  
-**“Deployment guide भी बना दो”**
+- Most frequent vehicle issues  
+- Severity trends across models  
+- Preventive design improvement opportunities  
+- Data-driven recall and quality decisions  
+
+---
+
+## 🚀 Scalability & Future Scope
+
+- EV-specific diagnostics  
+- Fleet-level monitoring dashboards  
+- Insurance & warranty integrations  
+- Continuous learning from real-world data  
+- IoT sensor integration  
+
+---
+
+## 🏆 Why This Solution Stands Out
+
+- Not just predictive — **fully autonomous**  
+- Explainable AI, not black-box predictions  
+- Covers **customer + service + OEM** ecosystem  
+- Built with real deployment and scalability in mind  
+
+> *“This is not just predictive maintenance — it is autonomous vehicle care.”*
+
+---
+
+## 👥 Team XLCODER
+
+A passionate team focused on building **real-world, production-ready AI solutions** using modern technologies and intelligent system design.
+
+---
+
+## 📄 License
+
+This project is developed for **EY Techathon 6.0** (educational & prototype use).
+
+---
+
+⭐ If you like this project, feel free to explore the code and try the live demo!
 
